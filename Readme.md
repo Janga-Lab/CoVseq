@@ -57,7 +57,7 @@ a) query coverage (Query_Coverage >= 0.4)
 
 b) gapped alignment(M/GM>=0.6) thresholding.
 
-      for i in $(cat ID.txt); do /path/minimap2/minimap2 -x map-ont --secondary=no -t 8 ./Refernce/nCoV-2019.reference.fasta ./merge_chopped/$i.fastq|awk '0.40 <=(($4-$3)/$2) && 0.60 <=($10/$11){print $0}' > ./final_result/$i.paf;done
+      for i in $(cat barcode_id.txt); do /path/minimap2/minimap2 -x map-ont --secondary=no -t 8 ./Refernce/nCoV-2019.reference.fasta ./merge_chopped/$i.fastq|awk '0.40 <=(($4-$3)/$2) && 0.60 <=($10/$11){print $0}' > ./final_result/$i.paf;done
 
 **STEP 6:** Read count and quantification
 
