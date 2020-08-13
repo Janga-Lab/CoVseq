@@ -63,6 +63,6 @@ b) gapped alignment(M/GM>=0.6) thresholding.
 
       cd final_result
       wc -l *.paf|tr '.' ' '|awk '{print $2,$1}'|tr ' ' '\t'|grep -v "total" > Count.tab
-      awk 'NR==FNR {sum+= $2; next}{printf("%0.3f\n", (($2*10^9)/(sum*29903)))}' Count.txt Count.txt > RPKM.tab
+      awk 'NR==FNR {sum+= $2; next}{printf("%0.3f\n", (($2*10^9)/(sum*29903)))}' Count.tab Count.tab > RPKM.tab
       paste Count.tab RPKM.tab > Quant_result.txt
       rm *.paf *.tab
